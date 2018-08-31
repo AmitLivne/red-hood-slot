@@ -92,7 +92,8 @@ li {
 	background-size: contain;
 	width: 469px;
 	height: 147px;
-	cursor: pointer;
+    cursor: pointer;
+    outline: none;
 }
 
 .spin-btn-shadow-bottom {

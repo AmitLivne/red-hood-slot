@@ -192,11 +192,13 @@ function stopReelsSpin() {
 
     setTimeout(() => {
         displayElements('block', 0, '1')
-        showStars(elWildSymbols, 'block');
+        if (!isStopped) {
+            showStars(elWildSymbols, 'block');
+        }
         setTimeout(() => {
             isStopped = false;
             clicksCount = 0;
-            // time = 2100;
+            time = 2100;
         }, MIN_SPIN_TIME + 400)
     }, 400)
 }
