@@ -199,6 +199,7 @@ function stopReelsSpin() {
             isStopped = false;
             clicksCount = 0;
             time = 2100;
+
         }, MIN_SPIN_TIME + 400)
     }, 400)
 }
