@@ -1,349 +1,336 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 .reel-slider {
-    transform: translateY(-405px);    
+	transform: translateY(-405px);
 }
 
 .reel {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .symbol {
-    background-size: 202px 202px;
-    background-size: contain;
-    background-position: center;
+	background-size: contain;
+	background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 ul {
-    padding: 20px;
-    margin: 0;
-    padding: 0;
+	padding: 20px;
+	margin: 0;
+	padding: 0;
 }
 
 li {
-    list-style: none;
-    cursor: pointer;
-    width: 202px;
-    height: 202px;
+	list-style: none;
+	cursor: pointer;
+	width: 202px;
+	height: 202px;
 }
 
-.reel1,.reel2 {
-    margin-right: 15px;
+.reel1,
+.reel2 {
+	margin-right: 15px;
 }
 
 .container {
-    background-image: url('./img/bg.png');
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 720px;
-    width: 100%;
-    margin: 0 auto;
-    height: 1280px;
-    position: relative;
-    z-index: 1;
+	background-image: url('./img/bg.png');
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 720px;
+	width: 100%;
+	margin: 0 auto;
+	height: 1280px;
+	position: relative;
+	z-index: 1;
 }
 
 .slot-background {
-    background-image: url(./img/slot-bg.png);
-    background-size: 152% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 720px;
-    height: 685px;
-    position: relative;
-    z-index: -2;
+	background-image: url(./img/slot-bg.png);
+	background-size: 152% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 720px;
+	height: 685px;
+	position: relative;
+	z-index: -2;
 }
 
 .slot-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    height: 605px;
-    overflow: hidden;
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+	height: 605px;
+	overflow: hidden;
 }
 
 .trees {
-    background-image: url('./img/front-trees.png');
-    background-size: 220% 1700px;
-    background-position: 50% 30%;
-    width: 720px;
-    height: 1280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+	background-image: url('./img/front-trees.png');
+	background-size: 220% 1700px;
+	background-position: 50% 30%;
+	width: 720px;
+	height: 1280px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
 }
 
-.spin-btn-shadow-bottom, .spin-btn-shadow-top {
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 469px;
-    height: 147px;
-    cursor: pointer;
+.spin-btn-shadow-bottom,
+.spin-btn-shadow-top {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 469px;
+	height: 147px;
+	cursor: pointer;
 }
 
 .spin-btn-shadow-bottom {
-    background-image: url('./img/button-1.png');
+	background-image: url('./img/button-1.png');
 }
 
 .spin-btn-shadow-top {
-    background-image: url('./img/button-2.png');
+	background-image: url('./img/button-2.png');
 }
 
 .huge-logo {
-    background-image: url('./img/huuuge-logo.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 133px;
-    height: 83px;
-    margin-left: 19px;
-    margin-top: 19px;
-    align-self: start;
+	background-image: url('./img/huuuge-logo.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 133px;
+	height: 83px;
+	margin-left: 19px;
+	margin-top: 19px;
+	align-self: start;
 }
 
 .redhood-logo {
-    background-image: url('./img/logo.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 453px;
-    height: 187px;
+	background-image: url('./img/logo.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 453px;
+	height: 187px;
 }
 
 .arrow {
-    background-image: url('./img/arr.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 184px;
-    height: 234px;
-    opacity: 0.9;
-    background-position: center;
-    position: relative;
-    margin: 0 auto;
-    animation: bounce 1s;
-    animation-iteration-count: infinite;
-    bottom: 985px;
+	background-image: url('./img/arr.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 184px;
+	height: 234px;
+	opacity: 0.9;
+	background-position: center;
+	position: relative;
+	margin: 0 auto;
+	animation: bounce 1s;
+	animation-iteration-count: infinite;
+	bottom: 985px;
 }
 
 .hand {
-    background-image: url(./img/hand.png);
-    background-repeat: no-repeat;
-    background-size: 114px 118px;
-    width: 130px;
-    height: 100px;
-    background-position: center;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+	background-image: url(./img/hand.png);
+	background-repeat: no-repeat;
+	background-size: 114px 118px;
+	width: 130px;
+	height: 100px;
+	background-position: center;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
 }
 
 .redhood-character {
-    background-image: url(./img/red-hood.png);
-    background-repeat: no-repeat;
-    background-size: 325% 135%;
-    width: 100%;
-    height: 770px;
-    background-position: center;
-    position: relative;
-    bottom: 535px;
+	background-image: url(./img/red-hood.png);
+	background-repeat: no-repeat;
+	background-size: 325% 135%;
+	width: 100%;
+	height: 770px;
+	background-position: center;
+	position: relative;
+	bottom: 535px;
     left: 225px;
 }
 
 h1.jackpot {
-    margin: 13px 0 0 0;
-    padding: 0;
-    font-family: Tahoma;
-    font-size: 0;
-    color: #f9ea27;
-    -webkit-text-stroke: 2px #E99B1D;
-    font-weight: 700; 
-    text-align: center;
+	margin: 13px 0 0 0;
+	padding: 0;
+	font-family: Tahoma;
+	font-size: 0;
+	color: #f9ea27;
+	-webkit-text-stroke: 2px #E99B1D;
+	font-weight: 700;
+	text-align: center;
 }
 
 h1 span {
-    margin: 0;
-    padding: 0;
-    font-size: 81px;
+	margin: 0;
+	padding: 0;
+	font-size: 81px;
 }
 
 .stars {
-    background-image: url(./img/stars.png);
-    background-repeat: no-repeat;
-    background-size: 279px 330px;
-    width: 100%;
-    height: 235px;
-    background-position: bottom;
-    display: none;
+	background-image: url(./img/stars.png);
+	background-repeat: no-repeat;
+	background-size: 279px 330px;
+	width: 100%;
+	height: 235px;
+	background-position: bottom;
+	display: none;
 }
 
 @keyframes bounce {
-	0% {transform: translateY(-30px)}
-	50% {transform: translateY(0)}
-	100% {transform: translateY(-30px)}
+	0% {
+		transform: translateY(-30px)
+	}
+	50% {
+		transform: translateY(0)
+	}
+	100% {
+		transform: translateY(-30px)
+	}
 }
 
 @media only screen and (max-width: 767px) {
-
-.reel-slider {
-transform: translateY(-302px);    
-}
-
-.container {
-    max-width: 100vw;
-    height: auto;
-}
-
-.trees {
-    width: 100vw;
-    height: auto;
-    background-size: 225% 1470px;
-    background-position: 51% 40%;
-}
-
-.huge-logo {
-    display: none;
-}
-
-.redhood-logo {
-    width: 222px;
-    height: 91px;
-}
-
-h1 span {
-    font-size: 55px;
-}
-
-.top-row {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100vw;
-}
-li {
-    width: 151px;
-    height: 151px;
-}
-
-.slot-container {
-    height: 453px;
-    position: relative;
-}
-
-.slot-background {
-    width: 562px;
-    height: 534px;
-}
-
-.redhood-character {
-    background-size: 255% 90%;
-    bottom: 385px;
-}
-
-.hand {
-    display: none;
-}
-
-.spin-btn-shadow-bottom, .spin-btn-shadow-top {
-    width: 270px;
-    height: 127px;
-}
-
-.arrow {
-    width: 115px;
-    height: 175px;
-}
-
-.stars {
-    background-size: 200px 258px;
-    height: 185px;
-}
-
-@keyframes bounce {
-	0% {transform: translateY(90px)}
-	50% {transform: translateY(35px)}
-	100% {transform: translateY(90px)}
-}
+	.reel-slider {
+		transform: translateY(-302px);
+	}
+	.container {
+		max-width: 100vw;
+		height: auto;
+	}
+	.trees {
+		width: 100vw;
+		height: auto;
+		background-size: 225% 1470px;
+		background-position: 51% 40%;
+	}
+	.huge-logo {
+		display: none;
+	}
+	.redhood-logo {
+		width: 222px;
+		height: 91px;
+	}
+	h1 span {
+		font-size: 55px;
+	}
+	.top-row {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100vw;
+	}
+	li {
+		width: 151px;
+		height: 151px;
+	}
+	.slot-container {
+		height: 453px;
+		position: relative;
+	}
+	.slot-background {
+		width: 562px;
+		height: 534px;
+	}
+	.redhood-character {
+		background-size: 255% 90%;
+		bottom: 385px;
+	}
+	.hand {
+		display: none;
+	}
+	.spin-btn-shadow-bottom,
+	.spin-btn-shadow-top {
+		width: 270px;
+		height: 127px;
+	}
+	.arrow {
+		width: 115px;
+        height: 175px;
+        bottom: 932px;
+	}
+	.stars {
+		background-size: 200px 258px;
+		height: 185px;
+	}
+	@keyframes bounce {
+		0% {
+			transform: translateY(45px)
+		}
+		50% {
+			transform: translateY(0px)
+		}
+		100% {
+			transform: translateY(45px)
+		}
+	}
 }
 
 @media only screen and (max-width: 546px) {
-    li {
-    width: 101px;
-    height: 101px;
-}
-
-.container {
-    height: 100vh;
-}
-
-.reel-slider {
-transform: translateY(-202px);    
-}
-
-.reel {
-    margin-right: 7px;
-}
-
-.slot-background {
-    width: 366px;
-    height: 349px;
-}
-
-.slot-container {
-    left: 3px;
-    margin-top: 20px;
-    height: 303px;
-}
-
-.top-row {
-    display: block;
-    margin-top: 15px;
-}
-
-.trees {
-    background-image: none;
-}
-
-.arrow {
-    width: 95px;
-    height: 155px;
-    bottom: 770px;
-}
-
-.redhood-character {
-    background-size: 280% 100%;
-    width: 100%;
-    height: 570px;
-    bottom: 360px;
-    left: 135px;
-}
-
-.redhood-logo {
-    margin: 0 auto;
-}
-
-h1 span {
-    font-size: 46px;
-}
-
-h1.jackpot {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.stars {
-    background-size: 140px 160px;
-    height: 115px;
-}
-
+	li {
+		width: 101px;
+		height: 101px;
+	}
+	.container {
+		height: 100vh;
+	}
+	.reel-slider {
+		transform: translateY(-202px);
+	}
+	.reel {
+		margin-right: 7px;
+	}
+	.slot-background {
+		width: 366px;
+		height: 349px;
+	}
+	.slot-container {
+		left: 3px;
+		margin-top: 20px;
+		height: 303px;
+	}
+	.top-row {
+		display: block;
+		margin-top: 15px;
+	}
+	.trees {
+		background-image: none;
+	}
+	.arrow {
+		width: 95px;
+		height: 155px;
+		bottom: 720px;
+	}
+	.redhood-character {
+		background-size: 280% 100%;
+		width: 100%;
+		height: 570px;
+		bottom: 360px;
+		left: 135px;
+	}
+	.redhood-logo {
+		margin: 0 auto;
+	}
+	h1 span {
+		font-size: 46px;
+	}
+	h1.jackpot {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.stars {
+		background-size: 140px 160px;
+		height: 115px;
+	}
 }

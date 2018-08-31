@@ -32,24 +32,17 @@ const symbols = [{
 
 const REELS_COUNT = 3;
 const MIN_SPIN_TIME = 2100;
-let time = 2100;
 const REELS_SPIN_INTERVAL_VALUE = 100;
+let time = 2100;
 let reelsIntervals = [];
 let spinBtnInterval;
 let jackpotInterval;
 let operators = Array.from({ length: REELS_COUNT }, () => 0);
 let elReels;
 let victoryIdxs = [2, 4, 2];
-// let reelsRedWoodIdxs = [], victoryMoves = [];
 let clicksCount = 0;
-let startTime;
-let stopTime;
-let totalTime;
 let isSpinning;
 let isStopped = false;
-let isFirstSpin = true;
-let isAlreadyWon = false;
-let timeToStop = 0;
 
 // --- Render 3 reels --- //
 
@@ -77,6 +70,7 @@ function renderSymbols() {
     elReels = document.querySelectorAll('.reel');
 
     elReels.forEach((reel, idx) => {
+
         let symbolStrHtml = ``;
         shuffle(idx);
 
@@ -93,22 +87,18 @@ function renderSymbols() {
         elReel.innerHTML = symbolStrHtml;
     })
     setButtonInterval()
-    // calcMoves()
 }
 
 // --- Activate slot --- //
 
 function spinReels() {
-    if (!startTime) startTime = Date.now();
 
     // Prevent multiple clicks
     if (clicksCount > 1) return;
 
     // User want to stop spinning
     else if (isSpinning) {
-        stopTime = Date.now();
         isStopped = true;
-        isFirstSpin = false;
         stopReelsSpin();
     } else {
 
@@ -133,15 +123,14 @@ function spinReels() {
                             if (elReel.children.item(victoryIdxs[1]).classList.contains('symbol6')) {
                                 clearInterval(reelsIntervals[idx])
                             }
-                        }, 900)
+                        }, 800)
 
                     } else {
-
                         setTimeout(() => {
                             if (elReel.children.item(victoryIdxs[2]).classList.contains('symbol6')) {
                                 clearInterval(reelsIntervals[idx])
                             }
-                        }, 1800)
+                        }, 1700)
                     }
 
                 }, time)
@@ -174,23 +163,6 @@ function spinReels() {
     clicksCount++;
 }
 
-// --- Shuffle symbols to get a random position for each one --- //
-
-function shuffle(idx) {
-    let i, j, temp;
-    for (i = symbols.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = symbols[i];
-        symbols[i] = symbols[j];
-        symbols[j] = temp;
-    }
-
-    // reelsRedWoodIdxs[idx] = symbols.findIndex((symbol) => {
-    //     return symbol.id === '6'
-    // })
-    return symbols;
-}
-
 // --- Manage button animation --- //
 
 function setButtonInterval() {
@@ -206,34 +178,28 @@ function setButtonInterval() {
 
 function stopReelsSpin() {
 
-    isSpinning = false;
     let elWildSymbols = document.querySelectorAll(`.symbol6 div`);
+    isSpinning = false;
 
     if (isStopped) {
-        totalTime = stopTime - startTime;
         reelsIntervals.forEach((reelInterval, idx) => {
             clearInterval(reelInterval)
         })
-    } else if (!isAlreadyWon) {
-        showStars(elWildSymbols, 'block')
-        isAlreadyWon = true;
     }
 
     clearInterval(jackpotInterval);
     setButtonInterval()
 
     setTimeout(() => {
-        isStopped = false;
-        clicksCount = 0;
-    }, MIN_SPIN_TIME + 600)
-
-    setTimeout(() => {
         displayElements('block', 0, '1')
-    }, timeToStop + 200)
-    timeToStop = 0;
+        showStars(elWildSymbols, 'block');
+        setTimeout(() => {
+            isStopped = false;
+            clicksCount = 0;
+            // time = 2100;
+        }, MIN_SPIN_TIME + 400)
+    }, 400)
 }
-
-// --- Manage elements animation --- //
 
 function displayElements(display, tranform, opacity) {
     let elRedHood = document.querySelector(`.redhood-character`);
@@ -282,19 +248,23 @@ function getPosition(el) {
     return matrix.m42;
 }
 
-// --- Define moves count for victory --- //
-
-// function calcMoves() {
-//     reelsRedWoodIdxs.forEach((reelsRedWoodIdx, idx) => {
-//         victoryMoves[idx] = (reelsRedWoodIdx <= victoryIdxs[idx]) ? (victoryIdxs[idx] - reelsRedWoodIdx) :
-//             (symbols.length - reelsRedWoodIdx) + victoryIdxs[idx]
-//     })
-// }
-
 // --- Show stars frame --- //
 
-function showStars(elWildSymbols) {
+function showStars(elWildSymbols, display) {
     elWildSymbols.forEach((elWildSymbol, idx) => {
-        elWildSymbol.style.display = 'block'
+        elWildSymbol.style.display = display;
     })
+}
+
+// --- Shuffle symbols to get a random position for each one --- //
+
+function shuffle(idx) {
+    let i, j, temp;
+    for (i = symbols.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = symbols[i];
+        symbols[i] = symbols[j];
+        symbols[j] = temp;
+    }
+    return symbols;
 }
